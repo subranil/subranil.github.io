@@ -1,755 +1,739 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.5">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Subranil Saha | Senior Android Engineer</title>
+<meta name="description" content="Senior Android Engineer with 6+ years. Expert in Kotlin, KMM, Jetpack Compose, MVVM, IoT. Bengaluru, India." />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --pink: #e83e8c;
+    --navy: #0d1117;
+    --card: #161b22;
+    --card2: #1c2230;
+    --muted: #8b949e;
+    --white: #e6edf3;
+    --accent: #7f77dd;
+    --border: #21262d;
+    --border2: #30363d;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--navy); color: var(--white); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(13,17,23,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 2rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .nav-brand { font-weight: 700; font-size: 15px; letter-spacing: .05em; color: var(--white); margin-right: 12px; }
+  .nav-links { flex: 1; display: flex; gap: 4px; flex-wrap: wrap; }
+  .nav-links a {
+    font-size: 13px; padding: 5px 14px; border-radius: 999px;
+    border: 1px solid transparent; color: var(--muted);
+    text-decoration: none; transition: all .2s;
+  }
+  .nav-links a:hover, .nav-links a.active { border-color: var(--pink); background: rgba(232,62,140,.12); color: var(--pink); }
+  .btn-pitch-nav {
+    font-size: 12px; padding: 7px 16px; border-radius: 999px;
+    background: var(--pink); color: #fff; border: none; cursor: pointer; font-weight: 600;
+  }
+
+  /* SECTIONS */
+  section { margin-bottom: 5rem; }
+  .container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* HERO */
+  #home { text-align: center; padding: 5rem 0 3rem; }
+  .badge-open {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(232,62,140,.1); border: 1px solid rgba(232,62,140,.3);
+    border-radius: 999px; padding: 5px 16px; margin-bottom: 1.5rem;
+    font-size: 12px; color: var(--pink); font-weight: 500;
+  }
+  .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #1d9e75; }
+  .hero-sub { font-size: 15px; color: var(--muted); margin-bottom: 8px; }
+  .hero-title { font-size: clamp(32px,6vw,52px); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }
+  .brace { color: var(--accent); font-weight: 300; }
+  .hero-desc { font-size: 15px; color: var(--muted); line-height: 1.75; max-width: 560px; margin: 0 auto 2.5rem; }
+  .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .btn { padding: 12px 28px; border-radius: 999px; font-size: 14px; cursor: pointer; text-decoration: none; display: inline-block; transition: all .2s; border: 1px solid transparent; }
+  .btn-outline-accent { background: rgba(127,119,221,.15); color: var(--accent); border-color: var(--accent); }
+  .btn-outline { background: transparent; color: var(--white); border-color: var(--border2); }
+  .btn-pink { background: var(--pink); color: #fff; border: none; font-weight: 600; }
+  .btn-pink:hover { background: #c9356f; }
+  .social-row { display: flex; gap: 14px; justify-content: center; }
+  .social-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid var(--border2); background: var(--card);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 600; color: var(--muted);
+    text-decoration: none; transition: all .2s;
+  }
+  .social-icon:hover { border-color: var(--pink); color: var(--pink); }
+
+  /* SECTION LABEL */
+  .section-label { text-align: center; margin-bottom: 3rem; }
+  .section-tag { font-size: 12px; letter-spacing: .15em; color: var(--pink); text-transform: uppercase; font-weight: 500; margin-bottom: 8px; }
+  .section-title { font-size: clamp(22px,4vw,30px); font-weight: 700; color: var(--white); }
+  .section-title .ac { color: var(--accent); }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
+  .about-desc { font-size: 14px; line-height: 1.85; color: var(--muted); margin-bottom: 1.25rem; }
+  .about-desc span.hi { color: var(--white); font-weight: 500; }
+  .about-desc span.pk { color: var(--pink); }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.5rem; }
+  .stat-card { background: var(--navy); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; }
+  .stat-val { font-weight: 700; font-size: 20px; color: var(--pink); }
+  .stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .profile-rows { border-top: 1px solid var(--border); padding-top: 1rem; }
+  .profile-row { display: flex; gap: 10px; margin-bottom: 6px; font-size: 12px; }
+  .profile-row .key { color: var(--muted); min-width: 70px; }
+  .profile-row .val { color: var(--white); }
+
+  /* SKILL BARS */
+  .skill-section-title { font-size: 12px; color: var(--pink); letter-spacing: .1em; text-transform: uppercase; font-weight: 500; margin-bottom: 1.25rem; }
+  .skill-item { margin-bottom: 16px; }
+  .skill-header { display: flex; justify-content: space-between; margin-bottom: 6px; }
+  .skill-name { font-size: 13px; color: var(--white); }
+  .skill-pct { font-size: 12px; color: var(--pink); font-weight: 500; }
+  .skill-track { height: 5px; background: var(--border); border-radius: 99px; overflow: hidden; }
+  .skill-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--pink), var(--accent)); width: 0; transition: width 1.2s ease; }
+
+  /* EXPERIENCE */
+  .exp-list { display: flex; flex-direction: column; gap: 12px; }
+  .exp-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; cursor: pointer; transition: border-color .25s; }
+  .exp-card.open { border-color: var(--pink); }
+  .exp-header { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; }
+  .exp-role { font-weight: 600; font-size: 15px; color: var(--white); margin-bottom: 4px; }
+  .exp-meta { display: flex; align-items: center; gap: 8px; }
+  .exp-company { font-size: 12px; color: var(--pink); background: rgba(232,62,140,.1); border: 1px solid rgba(232,62,140,.25); padding: 2px 10px; border-radius: 999px; font-weight: 500; }
+  .exp-client { font-size: 11px; color: var(--muted); }
+  .exp-right { display: flex; align-items: center; gap: 10px; }
+  .exp-period { font-size: 11px; color: var(--muted); }
+  .exp-arrow { color: var(--muted); font-size: 14px; transition: transform .25s; display: inline-block; }
+  .exp-card.open .exp-arrow { transform: rotate(180deg); }
+  .exp-body { display: none; padding: 0 1.5rem 1.5rem; border-top: 1px solid var(--border); }
+  .exp-card.open .exp-body { display: block; }
+  .exp-bullets { margin: 1rem 0; padding-left: 1.25rem; }
+  .exp-bullets li { font-size: 13px; line-height: 1.75; color: var(--muted); margin-bottom: 5px; }
+  .exp-apps { display: flex; gap: 8px; flex-wrap: wrap; }
+  .exp-app-link {
+    font-size: 12px; padding: 5px 14px; border-radius: 999px;
+    border: 1px solid var(--pink); color: var(--pink);
+    background: rgba(232,62,140,.08); text-decoration: none; font-weight: 500;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .exp-app-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--pink); }
+
+  /* TECH STACK + EDU */
+  .info-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; margin-top: 1.5rem; }
+  .info-card-title { font-size: 12px; color: var(--pink); letter-spacing: .1em; text-transform: uppercase; font-weight: 500; margin-bottom: 1rem; }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-size: 12px; padding: 4px 12px; border-radius: 999px; background: var(--navy); border: 1px solid var(--border2); color: var(--muted); }
+  .edu-row { display: flex; justify-content: space-between; align-items: center; }
+  .edu-name { font-weight: 600; font-size: 14px; color: var(--white); margin-bottom: 4px; }
+  .edu-sub { font-size: 13px; color: var(--muted); }
+  .badge-year { font-size: 12px; color: var(--pink); background: rgba(232,62,140,.1); border: 1px solid rgba(232,62,140,.25); padding: 3px 12px; border-radius: 999px; white-space: nowrap; }
+
+  /* PORTFOLIO GRID */
+  .portfolio-desc { text-align: center; color: var(--muted); font-size: 14px; margin-top: -1.5rem; margin-bottom: 2.5rem; }
+  .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .portfolio-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; overflow: hidden; cursor: pointer;
+    transition: border-color .25s, transform .25s;
+  }
+  .portfolio-card:hover { transform: translateY(-4px); }
+  .portfolio-thumb {
+    height: 160px; display: flex; align-items: center;
+    justify-content: center; position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+  .portfolio-icon {
+    width: 72px; height: 72px; border-radius: 18px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; font-weight: 800; letter-spacing: 1px;
+    position: relative; z-index: 1;
+  }
+  .portfolio-overlay {
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,0); display: flex;
+    align-items: center; justify-content: center;
+    transition: background .25s;
+  }
+  .portfolio-card:hover .portfolio-overlay { background: rgba(0,0,0,.55); }
+  .overlay-btn {
+    font-size: 13px; color: #fff; font-weight: 500;
+    padding: 6px 18px; border-radius: 999px;
+    opacity: 0; transform: translateY(6px); transition: all .25s;
+  }
+  .portfolio-card:hover .overlay-btn { opacity: 1; transform: translateY(0); }
+  .portfolio-footer { padding: 14px 16px; }
+  .portfolio-name { font-weight: 600; font-size: 15px; color: var(--white); margin-bottom: 3px; }
+  .portfolio-tag { font-size: 12px; color: var(--muted); }
+
+  /* MODAL */
+  .modal-backdrop {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,.88); z-index: 2000;
+    align-items: center; justify-content: center; padding: 1.5rem;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal-box {
+    background: var(--card); border-radius: 20px;
+    width: 100%; max-width: 580px; max-height: 90vh;
+    overflow-y: auto; position: relative;
+    animation: modalIn .25s ease;
+  }
+  @keyframes modalIn { from { opacity:0; transform:scale(.94); } to { opacity:1; transform:scale(1); } }
+  .modal-header { padding: 2.5rem 2rem 1.5rem; border-bottom: 1px solid var(--border); position: relative; }
+  .modal-close {
+    position: absolute; top: 16px; right: 16px;
+    background: var(--border); border: none; color: var(--muted);
+    font-size: 18px; width: 34px; height: 34px; border-radius: 50%;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+  }
+  .modal-title-row { display: flex; align-items: center; gap: 16px; }
+  .modal-icon { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; flex-shrink: 0; }
+  .modal-name { font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .modal-sub { font-size: 13px; color: var(--muted); }
+  .modal-body { padding: 1.75rem 2rem; }
+  .modal-company-badge { font-size: 11px; font-weight: 500; padding: 3px 12px; border-radius: 999px; display: inline-block; margin-bottom: 1rem; }
+  .modal-desc { font-size: 14px; line-height: 1.85; color: var(--muted); margin-bottom: 1.5rem; }
+  .modal-tech { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.75rem; }
+  .modal-stats { background: var(--navy); border-radius: 10px; padding: 10px 14px; margin-bottom: 1.75rem; display: flex; align-items: center; gap: 8px; }
+  .modal-stats-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .modal-stats-text { font-size: 12px; font-weight: 500; }
+  .modal-actions { display: flex; gap: 10px; }
+  .modal-play-btn { flex: 1; text-align: center; padding: 11px; border-radius: 10px; font-size: 14px; font-weight: 600; color: #fff; text-decoration: none; display: block; }
+  .modal-close-btn { padding: 11px 20px; background: transparent; color: var(--muted); border: 1px solid var(--border2); border-radius: 10px; font-size: 14px; cursor: pointer; }
+
+  /* PITCH MODAL */
+  .pitch-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.85); z-index: 3000; align-items: center; justify-content: center; padding: 1rem; }
+  .pitch-backdrop.open { display: flex; }
+  .pitch-box { background: var(--card); border: 1px solid var(--border2); border-radius: 16px; width: 100%; max-width: 520px; padding: 1.75rem; animation: modalIn .25s ease; }
+  .pitch-tag { font-size: 11px; color: var(--pink); letter-spacing: .1em; text-transform: uppercase; font-weight: 500; margin-bottom: 3px; }
+  .pitch-title { font-size: 20px; font-weight: 700; color: var(--white); }
+  .pitch-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; }
+  .pitch-close { background: none; border: none; color: var(--muted); font-size: 20px; cursor: pointer; }
+  .pitch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+  .pitch-label { font-size: 12px; color: var(--muted); display: block; margin-bottom: 5px; }
+  .pitch-input { width: 100%; background: var(--navy); border: 1px solid var(--border2); border-radius: 8px; padding: 8px 12px; color: var(--white); font-size: 14px; outline: none; }
+  .pitch-input:focus { border-color: var(--pink); }
+  .pitch-btn { width: 100%; padding: 10px; border-radius: 8px; font-size: 14px; font-weight: 600; color: #fff; border: none; cursor: pointer; background: var(--pink); transition: background .2s; }
+  .pitch-btn:disabled { background: var(--border); cursor: not-allowed; }
+  .pitch-loading { display: none; align-items: center; gap: 8px; margin-top: 12px; }
+  .pitch-loading.show { display: flex; }
+  .pitch-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink); opacity: .7; animation: bdot 1s infinite; }
+  .pitch-dot:nth-child(2) { animation-delay: .15s; }
+  .pitch-dot:nth-child(3) { animation-delay: .3s; }
+  @keyframes bdot { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+  .pitch-loading-text { font-size: 13px; color: var(--muted); }
+  .pitch-result { display: none; margin-top: 1rem; background: var(--navy); border: 1px solid var(--border2); border-radius: 10px; padding: 1rem; }
+  .pitch-result.show { display: block; }
+  .pitch-result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .pitch-result-label { font-size: 11px; color: var(--pink); text-transform: uppercase; letter-spacing: .08em; font-weight: 500; }
+  .pitch-copy-btn { font-size: 12px; padding: 3px 12px; border-radius: 6px; cursor: pointer; background: transparent; color: var(--pink); border: 1px solid var(--pink); transition: all .2s; }
+  .pitch-copy-btn.copied { background: #1d9e75; color: #fff; border-color: #1d9e75; }
+  .pitch-text { font-size: 14px; line-height: 1.8; color: var(--white); }
+
+  /* CONTACT */
+  .contact-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; text-align: center; }
+  .contact-sub { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 2rem; }
+  .contact-sub a { color: var(--pink); text-decoration: none; }
+  .contact-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .contact-link { font-size: 13px; padding: 9px 22px; border: 1px solid var(--border2); border-radius: 999px; color: var(--white); text-decoration: none; background: var(--card2); transition: border-color .2s; }
+  .contact-link:hover { border-color: var(--pink); }
+  .footer-copy { font-size: 11px; color: #444c56; }
+
+  /* FADE IN ANIMATION */
+  .fade-in { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 600px) {
+    .about-grid, .portfolio-grid, .pitch-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 32px; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
-<p class="p1">&lt;title&gt;Subranil Saha | Senior Android Engineer&lt;/title&gt;</p>
-<p class="p1">&lt;meta name="description" content="Senior Android Engineer with 6+ years. Expert in Kotlin, KMM, Jetpack Compose, MVVM, IoT. Bengaluru, India." /&gt;</p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--pink: #e83e8c;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--navy: #0d1117;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--card: #161b22;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--card2: #1c2230;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--muted: #8b949e;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--white: #e6edf3;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--accent: #7f77dd;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--border: #21262d;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--border2: #30363d;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>html { scroll-behavior: smooth; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>body { background: var(--navy); color: var(--white); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* NAV */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>nav {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>position: sticky; top: 0; z-index: 100;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: rgba(13,17,23,0.95);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>backdrop-filter: blur(12px);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border-bottom: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding: 14px 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: flex; align-items: center; gap: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.nav-brand { font-weight: 700; font-size: 15px; letter-spacing: .05em; color: var(--white); margin-right: 12px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.nav-links { flex: 1; display: flex; gap: 4px; flex-wrap: wrap; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.nav-links a {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 13px; padding: 5px 14px; border-radius: 999px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border: 1px solid transparent; color: var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>text-decoration: none; transition: all .2s;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.nav-links a:hover, .nav-links a.active { border-color: var(--pink); background: rgba(232,62,140,.12); color: var(--pink); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.btn-pitch-nav {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 12px; padding: 7px 16px; border-radius: 999px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: var(--pink); color: #fff; border: none; cursor: pointer; font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* SECTIONS */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>section { margin-bottom: 5rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* HERO */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>#home { text-align: center; padding: 5rem 0 3rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.badge-open {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: inline-flex; align-items: center; gap: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: rgba(232,62,140,.1); border: 1px solid rgba(232,62,140,.3);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 999px; padding: 5px 16px; margin-bottom: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 12px; color: var(--pink); font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #1d9e75; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-sub { font-size: 15px; color: var(--muted); margin-bottom: 8px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-title { font-size: clamp(32px,6vw,52px); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.brace { color: var(--accent); font-weight: 300; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-desc { font-size: 15px; color: var(--muted); line-height: 1.75; max-width: 560px; margin: 0 auto 2.5rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.btn { padding: 12px 28px; border-radius: 999px; font-size: 14px; cursor: pointer; text-decoration: none; display: inline-block; transition: all .2s; border: 1px solid transparent; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.btn-outline-accent { background: rgba(127,119,221,.15); color: var(--accent); border-color: var(--accent); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.btn-outline { background: transparent; color: var(--white); border-color: var(--border2); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.btn-pink { background: var(--pink); color: #fff; border: none; font-weight: 600; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.btn-pink:hover { background: #c9356f; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.social-row { display: flex; gap: 14px; justify-content: center; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.social-icon {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>width: 40px; height: 40px; border-radius: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border: 1px solid var(--border2); background: var(--card);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: flex; align-items: center; justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 13px; font-weight: 600; color: var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>text-decoration: none; transition: all .2s;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.social-icon:hover { border-color: var(--pink); color: var(--pink); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* SECTION LABEL */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.section-label { text-align: center; margin-bottom: 3rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.section-tag { font-size: 12px; letter-spacing: .15em; color: var(--pink); text-transform: uppercase; font-weight: 500; margin-bottom: 8px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.section-title { font-size: clamp(22px,4vw,30px); font-weight: 700; color: var(--white); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.section-title .ac { color: var(--accent); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* ABOUT */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.about-desc { font-size: 14px; line-height: 1.85; color: var(--muted); margin-bottom: 1.25rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.about-desc span.hi { color: var(--white); font-weight: 500; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.about-desc span.pk { color: var(--pink); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.5rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.stat-card { background: var(--navy); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.stat-val { font-weight: 700; font-size: 20px; color: var(--pink); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.profile-rows { border-top: 1px solid var(--border); padding-top: 1rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.profile-row { display: flex; gap: 10px; margin-bottom: 6px; font-size: 12px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.profile-row .key { color: var(--muted); min-width: 70px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.profile-row .val { color: var(--white); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* SKILL BARS */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.skill-section-title { font-size: 12px; color: var(--pink); letter-spacing: .1em; text-transform: uppercase; font-weight: 500; margin-bottom: 1.25rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.skill-item { margin-bottom: 16px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.skill-header { display: flex; justify-content: space-between; margin-bottom: 6px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.skill-name { font-size: 13px; color: var(--white); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.skill-pct { font-size: 12px; color: var(--pink); font-weight: 500; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.skill-track { height: 5px; background: var(--border); border-radius: 99px; overflow: hidden; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.skill-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--pink), var(--accent)); width: 0; transition: width 1.2s ease; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* EXPERIENCE */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-list { display: flex; flex-direction: column; gap: 12px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; cursor: pointer; transition: border-color .25s; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-card.open { border-color: var(--pink); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-header { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-role { font-weight: 600; font-size: 15px; color: var(--white); margin-bottom: 4px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-meta { display: flex; align-items: center; gap: 8px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-company { font-size: 12px; color: var(--pink); background: rgba(232,62,140,.1); border: 1px solid rgba(232,62,140,.25); padding: 2px 10px; border-radius: 999px; font-weight: 500; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-client { font-size: 11px; color: var(--muted); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-right { display: flex; align-items: center; gap: 10px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-period { font-size: 11px; color: var(--muted); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-arrow { color: var(--muted); font-size: 14px; transition: transform .25s; display: inline-block; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-card.open .exp-arrow { transform: rotate(180deg); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-body { display: none; padding: 0 1.5rem 1.5rem; border-top: 1px solid var(--border); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-card.open .exp-body { display: block; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-bullets { margin: 1rem 0; padding-left: 1.25rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-bullets li { font-size: 13px; line-height: 1.75; color: var(--muted); margin-bottom: 5px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-apps { display: flex; gap: 8px; flex-wrap: wrap; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-app-link {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 12px; padding: 5px 14px; border-radius: 999px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border: 1px solid var(--pink); color: var(--pink);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: rgba(232,62,140,.08); text-decoration: none; font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: inline-flex; align-items: center; gap: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exp-app-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--pink); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* TECH STACK + EDU */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.info-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; margin-top: 1.5rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.info-card-title { font-size: 12px; color: var(--pink); letter-spacing: .1em; text-transform: uppercase; font-weight: 500; margin-bottom: 1rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.tag-list { display: flex; flex-wrap: wrap; gap: 8px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.tag { font-size: 12px; padding: 4px 12px; border-radius: 999px; background: var(--navy); border: 1px solid var(--border2); color: var(--muted); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.edu-row { display: flex; justify-content: space-between; align-items: center; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.edu-name { font-weight: 600; font-size: 14px; color: var(--white); margin-bottom: 4px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.edu-sub { font-size: 13px; color: var(--muted); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.badge-year { font-size: 12px; color: var(--pink); background: rgba(232,62,140,.1); border: 1px solid rgba(232,62,140,.25); padding: 3px 12px; border-radius: 999px; white-space: nowrap; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* PORTFOLIO GRID */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.portfolio-desc { text-align: center; color: var(--muted); font-size: 14px; margin-top: -1.5rem; margin-bottom: 2.5rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.portfolio-card {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: var(--card); border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 14px; overflow: hidden; cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>transition: border-color .25s, transform .25s;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.portfolio-card:hover { transform: translateY(-4px); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.portfolio-thumb {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>height: 160px; display: flex; align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>justify-content: center; position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border-bottom: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.portfolio-icon {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>width: 72px; height: 72px; border-radius: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: flex; align-items: center; justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 22px; font-weight: 800; letter-spacing: 1px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>position: relative; z-index: 1;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.portfolio-overlay {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>position: absolute; inset: 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: rgba(0,0,0,0); display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>align-items: center; justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>transition: background .25s;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.portfolio-card:hover .portfolio-overlay { background: rgba(0,0,0,.55); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.overlay-btn {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 13px; color: #fff; font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding: 6px 18px; border-radius: 999px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>opacity: 0; transform: translateY(6px); transition: all .25s;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.portfolio-card:hover .overlay-btn { opacity: 1; transform: translateY(0); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.portfolio-footer { padding: 14px 16px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.portfolio-name { font-weight: 600; font-size: 15px; color: var(--white); margin-bottom: 3px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.portfolio-tag { font-size: 12px; color: var(--muted); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* MODAL */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-backdrop {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: none; position: fixed; inset: 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: rgba(0,0,0,.88); z-index: 2000;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>align-items: center; justify-content: center; padding: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-backdrop.open { display: flex; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-box {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: var(--card); border-radius: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>width: 100%; max-width: 580px; max-height: 90vh;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>overflow-y: auto; position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>animation: modalIn .25s ease;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>@keyframes modalIn { from { opacity:0; transform:scale(.94); } to { opacity:1; transform:scale(1); } }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-header { padding: 2.5rem 2rem 1.5rem; border-bottom: 1px solid var(--border); position: relative; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-close {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>position: absolute; top: 16px; right: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: var(--border); border: none; color: var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 18px; width: 34px; height: 34px; border-radius: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer; display: flex; align-items: center; justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-title-row { display: flex; align-items: center; gap: 16px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-icon { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; flex-shrink: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-name { font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 4px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-sub { font-size: 13px; color: var(--muted); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-body { padding: 1.75rem 2rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-company-badge { font-size: 11px; font-weight: 500; padding: 3px 12px; border-radius: 999px; display: inline-block; margin-bottom: 1rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-desc { font-size: 14px; line-height: 1.85; color: var(--muted); margin-bottom: 1.5rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-tech { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.75rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-stats { background: var(--navy); border-radius: 10px; padding: 10px 14px; margin-bottom: 1.75rem; display: flex; align-items: center; gap: 8px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-stats-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-stats-text { font-size: 12px; font-weight: 500; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-actions { display: flex; gap: 10px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-play-btn { flex: 1; text-align: center; padding: 11px; border-radius: 10px; font-size: 14px; font-weight: 600; color: #fff; text-decoration: none; display: block; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.modal-close-btn { padding: 11px 20px; background: transparent; color: var(--muted); border: 1px solid var(--border2); border-radius: 10px; font-size: 14px; cursor: pointer; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* PITCH MODAL */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.85); z-index: 3000; align-items: center; justify-content: center; padding: 1rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-backdrop.open { display: flex; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-box { background: var(--card); border: 1px solid var(--border2); border-radius: 16px; width: 100%; max-width: 520px; padding: 1.75rem; animation: modalIn .25s ease; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-tag { font-size: 11px; color: var(--pink); letter-spacing: .1em; text-transform: uppercase; font-weight: 500; margin-bottom: 3px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-title { font-size: 20px; font-weight: 700; color: var(--white); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-close { background: none; border: none; color: var(--muted); font-size: 20px; cursor: pointer; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-label { font-size: 12px; color: var(--muted); display: block; margin-bottom: 5px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-input { width: 100%; background: var(--navy); border: 1px solid var(--border2); border-radius: 8px; padding: 8px 12px; color: var(--white); font-size: 14px; outline: none; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-input:focus { border-color: var(--pink); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-btn { width: 100%; padding: 10px; border-radius: 8px; font-size: 14px; font-weight: 600; color: #fff; border: none; cursor: pointer; background: var(--pink); transition: background .2s; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-btn:disabled { background: var(--border); cursor: not-allowed; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-loading { display: none; align-items: center; gap: 8px; margin-top: 12px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-loading.show { display: flex; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink); opacity: .7; animation: bdot 1s infinite; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-dot:nth-child(2) { animation-delay: .15s; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-dot:nth-child(3) { animation-delay: .3s; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>@keyframes bdot { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-loading-text { font-size: 13px; color: var(--muted); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-result { display: none; margin-top: 1rem; background: var(--navy); border: 1px solid var(--border2); border-radius: 10px; padding: 1rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-result.show { display: block; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-result-label { font-size: 11px; color: var(--pink); text-transform: uppercase; letter-spacing: .08em; font-weight: 500; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-copy-btn { font-size: 12px; padding: 3px 12px; border-radius: 6px; cursor: pointer; background: transparent; color: var(--pink); border: 1px solid var(--pink); transition: all .2s; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-copy-btn.copied { background: #1d9e75; color: #fff; border-color: #1d9e75; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pitch-text { font-size: 14px; line-height: 1.8; color: var(--white); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* CONTACT */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.contact-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; text-align: center; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.contact-sub { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 2rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.contact-sub a { color: var(--pink); text-decoration: none; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.contact-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.contact-link { font-size: 13px; padding: 9px 22px; border: 1px solid var(--border2); border-radius: 999px; color: var(--white); text-decoration: none; background: var(--card2); transition: border-color .2s; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.contact-link:hover { border-color: var(--pink); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.footer-copy { font-size: 11px; color: #444c56; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* FADE IN ANIMATION */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.fade-in { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.fade-in.visible { opacity: 1; transform: translateY(0); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>@media (max-width: 600px) {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.about-grid, .portfolio-grid, .pitch-grid { grid-template-columns: 1fr; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero-title { font-size: 32px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.stats-grid { grid-template-columns: 1fr 1fr; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- NAV --&gt;</p>
-<p class="p1">&lt;nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;span class="nav-brand"&gt;SUBRANIL&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="nav-links"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#home" class="active"&gt;Home&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#about"&gt;About&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#resume"&gt;Resume&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#portfolio"&gt;Portfolio&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#contact"&gt;Contact&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;button class="btn-pitch-nav" onclick="openPitch()"&gt;Get Pitch ✦&lt;/button&gt;</p>
-<p class="p1">&lt;/nav&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div class="container"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- HERO --&gt;</p>
-<p class="p1">&lt;section id="home"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="badge-open"&gt;&lt;span class="badge-dot"&gt;&lt;/span&gt; Open to opportunities · Bengaluru, India&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p class="hero-sub"&gt;Hi, I'm Subranil Saha!&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1 class="hero-title"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="brace"&gt;{ &lt;/span&gt;Senior Android&lt;br&gt;Engineer&lt;span class="brace"&gt; }&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p class="hero-desc"&gt;6+ years building complex, high-quality Android apps — specializing in KMM, Jetpack Compose, MVVM, and Bluetooth/IoT. Shipped to 10M+ users across education, media, and consumer IoT.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="hero-btns"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#about" class="btn btn-outline-accent"&gt;About me ↓&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#contact" class="btn btn-outline"&gt;Let's talk →&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="btn btn-pink" onclick="openPitch()"&gt;Get pitch ✦&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="social-row"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://www.linkedin.com/in/subranil-saha-914897ba/" class="social-icon" target="_blank"&gt;in&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://github.com/subranil" class="social-icon" target="_blank"&gt;gh&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://medium.com/@subranil" class="social-icon" target="_blank"&gt;M&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://www.instagram.com/by_whitexblue/" class="social-icon" target="_blank"&gt;ig&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- ABOUT --&gt;</p>
-<p class="p1">&lt;section id="about" class="fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-label"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="section-tag"&gt;Global Expertise&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="section-title"&gt;Let me introduce &lt;span class="ac"&gt;{ the Engineer }&lt;/span&gt;&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="about-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="about-desc"&gt;Experienced Android Developer with &lt;span class="hi"&gt;6+ years&lt;/span&gt; specializing in enhancements, migrations, and optimizations. Proficient in &lt;span class="pk"&gt;KMM, Jetpack Compose, MVVM&lt;/span&gt;, and Bluetooth connectivity.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="about-desc"&gt;Proven track record at &lt;span class="hi"&gt;UST Global&lt;/span&gt;, &lt;span class="hi"&gt;Recro&lt;/span&gt;, and &lt;span class="hi"&gt;Tarento&lt;/span&gt; — delivering scalable, innovative solutions for challenging projects across IoT, media, and ed-tech.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="stats-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="stat-card"&gt;&lt;div class="stat-val"&gt;6+&lt;/div&gt;&lt;div class="stat-label"&gt;Years exp.&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="stat-card"&gt;&lt;div class="stat-val"&gt;4&lt;/div&gt;&lt;div class="stat-label"&gt;Shipped apps&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="stat-card"&gt;&lt;div class="stat-val"&gt;10M+&lt;/div&gt;&lt;div class="stat-label"&gt;Users reached&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="stat-card"&gt;&lt;div class="stat-val"&gt;95%+&lt;/div&gt;&lt;div class="stat-label"&gt;Code coverage&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="profile-rows"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="profile-row"&gt;&lt;span class="key"&gt;Email:&lt;/span&gt;&lt;span class="val"&gt;subranil.saha@gmail.com&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="profile-row"&gt;&lt;span class="key"&gt;Location:&lt;/span&gt;&lt;span class="val"&gt;Bengaluru, India&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="profile-row"&gt;&lt;span class="key"&gt;Position:&lt;/span&gt;&lt;span class="val"&gt;Lead I SE at UST Global&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="profile-row"&gt;&lt;span class="key"&gt;Education:&lt;/span&gt;&lt;span class="val"&gt;B.E. CS, Anna University&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="skill-section-title"&gt;Skills&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="skill-item"&gt;&lt;div class="skill-header"&gt;&lt;span class="skill-name"&gt;Kotlin&lt;/span&gt;&lt;span class="skill-pct"&gt;95%&lt;/span&gt;&lt;/div&gt;&lt;div class="skill-track"&gt;&lt;div class="skill-fill" data-pct="95"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="skill-item"&gt;&lt;div class="skill-header"&gt;&lt;span class="skill-name"&gt;Jetpack Compose&lt;/span&gt;&lt;span class="skill-pct"&gt;92%&lt;/span&gt;&lt;/div&gt;&lt;div class="skill-track"&gt;&lt;div class="skill-fill" data-pct="92"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="skill-item"&gt;&lt;div class="skill-header"&gt;&lt;span class="skill-name"&gt;KMM (Kotlin Multiplatform)&lt;/span&gt;&lt;span class="skill-pct"&gt;85%&lt;/span&gt;&lt;/div&gt;&lt;div class="skill-track"&gt;&lt;div class="skill-fill" data-pct="85"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="skill-item"&gt;&lt;div class="skill-header"&gt;&lt;span class="skill-name"&gt;MVVM / Clean Architecture&lt;/span&gt;&lt;span class="skill-pct"&gt;92%&lt;/span&gt;&lt;/div&gt;&lt;div class="skill-track"&gt;&lt;div class="skill-fill" data-pct="92"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="skill-item"&gt;&lt;div class="skill-header"&gt;&lt;span class="skill-name"&gt;Coroutines &amp; Flow API&lt;/span&gt;&lt;span class="skill-pct"&gt;90%&lt;/span&gt;&lt;/div&gt;&lt;div class="skill-track"&gt;&lt;div class="skill-fill" data-pct="90"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="skill-item"&gt;&lt;div class="skill-header"&gt;&lt;span class="skill-name"&gt;Bluetooth / IoT&lt;/span&gt;&lt;span class="skill-pct"&gt;82%&lt;/span&gt;&lt;/div&gt;&lt;div class="skill-track"&gt;&lt;div class="skill-fill" data-pct="82"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="skill-item"&gt;&lt;div class="skill-header"&gt;&lt;span class="skill-name"&gt;Dagger / DI&lt;/span&gt;&lt;span class="skill-pct"&gt;85%&lt;/span&gt;&lt;/div&gt;&lt;div class="skill-track"&gt;&lt;div class="skill-fill" data-pct="85"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="skill-item"&gt;&lt;div class="skill-header"&gt;&lt;span class="skill-name"&gt;Java&lt;/span&gt;&lt;span class="skill-pct"&gt;80%&lt;/span&gt;&lt;/div&gt;&lt;div class="skill-track"&gt;&lt;div class="skill-fill" data-pct="80"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- RESUME --&gt;</p>
-<p class="p1">&lt;section id="resume" class="fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-label"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="section-tag"&gt;Experience&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="section-title"&gt;Lead Android Developer &lt;span class="ac"&gt;{ Credentials }&lt;/span&gt;&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="exp-list"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- UST Global --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="exp-card open" onclick="toggleExp(this)"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="exp-header"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="exp-role"&gt;Lead I SE — Android&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="exp-meta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="exp-company"&gt;UST Global&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="exp-client"&gt;Client: Philips&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="exp-right"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="exp-period"&gt;Jul 2023 – Present&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="exp-arrow"&gt;⌄&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="exp-body"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul class="exp-bullets"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Single codebase powering two flagship Philips grooming apps: GroomTribe &amp; OneBlade.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Built KMM connectivity layer handling Bluetooth interface for IoT-connected shavers.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Network calls on KMM layer using Ktor; MVVM with ViewModel + repository pattern.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;4-repo architecture: UI library, base repo with 2 submodules (Service + Localisation).&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Maintained 95%+ code coverage on Sonar across all feature scenarios.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="exp-apps"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="https://play.google.com/store/search?q=groomtribe&amp;c=apps" class="exp-app-link" target="_blank"&gt;&lt;span class="exp-app-dot"&gt;&lt;/span&gt;GroomTribe&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="https://play.google.com/store/search?q=One%20Blade&amp;c=apps" class="exp-app-link" target="_blank"&gt;&lt;span class="exp-app-dot"&gt;&lt;/span&gt;OneBlade&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Recro --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="exp-card" onclick="toggleExp(this)"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="exp-header"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="exp-role"&gt;SSE — Android&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="exp-meta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="exp-company"&gt;Recro&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="exp-client"&gt;Client: Versé Innovation (DailyHunt)&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="exp-right"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="exp-period"&gt;Feb 2022 – Jul 2023&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="exp-arrow"&gt;⌄&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="exp-body"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul class="exp-bullets"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Maintenance and enhancement of PublicVibe app — 10M+ downloads.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Rebuilt the application in KMM + Jetpack Compose with a multi-module structure.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Created a multi-module navigation library with deep link support for the KMM project.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Integrated in-house, Google, and Facebook ads — 26 ad types with direct revenue impact.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="exp-apps"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="https://play.google.com/store/apps/details?id=com.cardfeed.video_public" class="exp-app-link" target="_blank"&gt;&lt;span class="exp-app-dot"&gt;&lt;/span&gt;Public App&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tarento --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="exp-card" onclick="toggleExp(this)"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="exp-header"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="exp-role"&gt;SSE — Android&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="exp-meta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="exp-company"&gt;Tarento Technologies&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="exp-client"&gt;Client: Ekstep Org&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="exp-right"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="exp-period"&gt;Mar 2018 – Feb 2022&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="exp-arrow"&gt;⌄&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="exp-body"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul class="exp-bullets"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Developed and enhanced Sunbird &amp; DIKSHA — India's national digital learning platforms.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Led migration of service layer from JavaScript SDK to Android SDK.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Refactored legacy MVC to MVVM Kotlin, improving maintainability and scalability.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Spearheaded Hybrid (Ionic + Angular) to Native Android transition.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Resolved critical production bugs across complex multi-dashboard user journeys.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="exp-apps"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="https://play.google.com/store/apps/details?id=in.gov.diksha.app" class="exp-app-link" target="_blank"&gt;&lt;span class="exp-app-dot"&gt;&lt;/span&gt;DIKSHA&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="https://play.google.com/store/apps/details?id=in.gov.diksha.app" class="exp-app-link" target="_blank"&gt;&lt;span class="exp-app-dot"&gt;&lt;/span&gt;Sunbird&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="info-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="info-card-title"&gt;Tech stack&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="tag-list"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="tag"&gt;Java&lt;/span&gt;&lt;span class="tag"&gt;Kotlin&lt;/span&gt;&lt;span class="tag"&gt;TypeScript&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="tag"&gt;Android SDK&lt;/span&gt;&lt;span class="tag"&gt;Jetpack Compose&lt;/span&gt;&lt;span class="tag"&gt;KMM&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="tag"&gt;MVP/MVVM&lt;/span&gt;&lt;span class="tag"&gt;LiveData&lt;/span&gt;&lt;span class="tag"&gt;Flow API&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="tag"&gt;Coroutines&lt;/span&gt;&lt;span class="tag"&gt;ExoPlayer&lt;/span&gt;&lt;span class="tag"&gt;Jetpack Navigation&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="tag"&gt;Dagger&lt;/span&gt;&lt;span class="tag"&gt;Ktor&lt;/span&gt;&lt;span class="tag"&gt;Retrofit&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="tag"&gt;JUnit&lt;/span&gt;&lt;span class="tag"&gt;Room DB&lt;/span&gt;&lt;span class="tag"&gt;SQLite&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="tag"&gt;Firebase Firestore&lt;/span&gt;&lt;span class="tag"&gt;Git&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="info-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="edu-row"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;&lt;div class="edu-name"&gt;B.E. in Computer Science&lt;/div&gt;&lt;div class="edu-sub"&gt;Excel Engineering College, Anna University&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="badge-year"&gt;2012 – 2016&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- PORTFOLIO --&gt;</p>
-<p class="p1">&lt;section id="portfolio" class="fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-label"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="section-tag"&gt;Shipped Work&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="section-title"&gt;Check Out Some of &lt;span class="ac"&gt;{ My Works }&lt;/span&gt;&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p class="portfolio-desc"&gt;Explore my portfolio of high-impact Android applications — click any card for details.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="portfolio-grid"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- GroomTribe --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="portfolio-card" onclick="openModal('groomtribe')" style="--card-color:#7f77dd"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="portfolio-thumb" style="background:linear-gradient(135deg,#7f77dd18,#161b22)"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="portfolio-icon" style="background:#7f77dd22;border:2px solid #7f77dd44;color:#7f77dd"&gt;GT&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="portfolio-overlay"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="overlay-btn" style="background:#7f77dd"&gt;Details →&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="portfolio-footer"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="portfolio-name"&gt;GroomTribe&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="portfolio-tag"&gt;Android Native · IoT · KMM&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- OneBlade --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="portfolio-card" onclick="openModal('oneblade')" style="--card-color:#7f77dd"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="portfolio-thumb" style="background:linear-gradient(135deg,#7f77dd18,#161b22)"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="portfolio-icon" style="background:#7f77dd22;border:2px solid #7f77dd44;color:#7f77dd"&gt;OB&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="portfolio-overlay"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="overlay-btn" style="background:#7f77dd"&gt;Details →&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="portfolio-footer"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="portfolio-name"&gt;OneBlade&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="portfolio-tag"&gt;Android Native · IoT · AR&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Public App --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="portfolio-card" onclick="openModal('public')" style="--card-color:#e83e8c"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="portfolio-thumb" style="background:linear-gradient(135deg,#e83e8c18,#161b22)"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="portfolio-icon" style="background:#e83e8c22;border:2px solid #e83e8c44;color:#e83e8c"&gt;PA&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="portfolio-overlay"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="overlay-btn" style="background:#e83e8c"&gt;Details →&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="portfolio-footer"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="portfolio-name"&gt;Public App&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="portfolio-tag"&gt;Android Native · KMM · Compose&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- DIKSHA --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="portfolio-card" onclick="openModal('diksha')" style="--card-color:#1d9e75"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="portfolio-thumb" style="background:linear-gradient(135deg,#1d9e7518,#161b22)"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="portfolio-icon" style="background:#1d9e7522;border:2px solid #1d9e7544;color:#1d9e75"&gt;DK&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="portfolio-overlay"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="overlay-btn" style="background:#1d9e75"&gt;Details →&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="portfolio-footer"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="portfolio-name"&gt;DIKSHA&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="portfolio-tag"&gt;Android Native · MVVM · Govt of India&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- CONTACT --&gt;</p>
-<p class="p1">&lt;section id="contact" class="fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-label"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="section-tag"&gt;Get In Touch&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="section-title"&gt;Let's &lt;span class="ac"&gt;{ Connect }&lt;/span&gt;&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="contact-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="contact-sub"&gt;Open to senior Android roles · Bengaluru, India&lt;br&gt;&lt;a href="mailto:subranil.saha@gmail.com"&gt;subranil.saha@gmail.com&lt;/a&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="contact-links"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://www.linkedin.com/in/subranil-saha-914897ba/" class="contact-link" target="_blank"&gt;LinkedIn&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://github.com/subranil" class="contact-link" target="_blank"&gt;GitHub&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://medium.com/@subranil" class="contact-link" target="_blank"&gt;Medium&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://www.instagram.com/by_whitexblue/" class="contact-link" target="_blank"&gt;Instagram&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-pink" onclick="openPitch()"&gt;Get my pitch ✦&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="footer-copy"&gt;© 2025 Subranil Saha · Bengaluru, India&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/div&gt;&lt;!-- /container --&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- PROJECT MODALS DATA --&gt;</p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1">const PROJECTS = {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>groomtribe: {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>icon:'GT', name:'GroomTribe', sub:'Philips Shaving &amp; Styling',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>color:'#7f77dd', company:'UST Global · Philips',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>desc:'Philips\' flagship male grooming companion app. Built with a single KMM codebase shared with OneBlade. Features Bluetooth shaver pairing, real-time IoT shave guidance, AR beard styling, personalized skin analytics, and 95%+ Sonar code coverage.',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>tech:['KMM','Kotlin','BLE','MVVM','Ktor','AR'],</p>
-<p class="p1"><span class="Apple-converted-space">    </span>stats:'IoT · AR · BLE · Sonar 95%+',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>link:'https://play.google.com/store/search?q=groomtribe&amp;c=apps'</p>
-<p class="p1"><span class="Apple-converted-space">  </span>},</p>
-<p class="p1"><span class="Apple-converted-space">  </span>oneblade: {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>icon:'OB', name:'OneBlade', sub:'Philips Daily Care',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>color:'#7f77dd', company:'UST Global · Philips',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>desc:'Companion app for the Philips OneBlade range. Shares the KMM codebase with GroomTribe. Features smart blade replacement tracking, augmented reality beard styling, real-time speed guidance for Bluetooth-connected devices, and personalized grooming advice.',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>tech:['KMM','Kotlin','AR','BLE','MVVM'],</p>
-<p class="p1"><span class="Apple-converted-space">    </span>stats:'KMM · AR · Smart Tracking',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>link:'https://play.google.com/store/search?q=One%20Blade&amp;c=apps'</p>
-<p class="p1"><span class="Apple-converted-space">  </span>},</p>
-<p class="p1"><span class="Apple-converted-space">  </span>public: {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>icon:'PA', name:'Public App', sub:'Indian Local Video &amp; News',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>color:'#e83e8c', company:'Recro · Versé Innovation',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>desc:'India\'s hyperlocal video news platform (PublicVibe) for Versé Innovation / DailyHunt. Rebuilt in KMM + Jetpack Compose with a multi-module architecture. Integrated 26 ad types including in-house, Google, and Facebook for direct revenue impact.',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>tech:['KMM','Jetpack Compose','Multi-module','Ads','Deep Links'],</p>
-<p class="p1"><span class="Apple-converted-space">    </span>stats:'10M+ Downloads · 4.3★',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>link:'https://play.google.com/store/apps/details?id=com.cardfeed.video_public'</p>
-<p class="p1"><span class="Apple-converted-space">  </span>},</p>
-<p class="p1"><span class="Apple-converted-space">  </span>diksha: {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>icon:'DK', name:'DIKSHA', sub:'National Education Platform',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>color:'#1d9e75', company:'Tarento · Ekstep · Govt of India',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>desc:'India\'s flagship school education platform by NCERT. Led the transition from Hybrid (Ionic + Angular) to Native Android, migrated the service layer from JS SDK to Android SDK, and refactored legacy MVC to MVVM Kotlin for millions of students and teachers.',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>tech:['Kotlin','MVVM','Android SDK','Native Migration'],</p>
-<p class="p1"><span class="Apple-converted-space">    </span>stats:'1Cr+ Downloads · 4.1★ · Govt of India',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>link:'https://play.google.com/store/apps/details?id=in.gov.diksha.app'</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1">};</p>
-<p class="p2"><br></p>
-<p class="p1">function openModal(id) {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const p = PROJECTS[id];</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const backdrop = document.getElementById('projectModal');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-icon').textContent = p.icon;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-icon').style.background = p.color+'22';</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-icon').style.border = '2px solid '+p.color+'55';</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-icon').style.color = p.color;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-header').style.background = 'linear-gradient(135deg,'+p.color+'22 0%,#161b22 100%)';</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-name').textContent = p.name;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-sub').textContent = p.sub;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-company').textContent = p.company;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-company').style.background = p.color+'18';</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-company').style.border = '1px solid '+p.color+'44';</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-company').style.color = p.color;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-desc').textContent = p.desc;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-stats-dot').style.background = p.color;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-stats-text').textContent = p.stats;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-stats-text').style.color = p.color;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-play').href = p.link;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('m-play').style.background = p.color;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const techEl = document.getElementById('m-tech');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>techEl.innerHTML = p.tech.map(t=&gt;`&lt;span class="tag"&gt;${t}&lt;/span&gt;`).join('');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>backdrop.classList.add('open');</p>
-<p class="p1">}</p>
-<p class="p1">function closeModal() { document.getElementById('projectModal').classList.remove('open'); }</p>
-<p class="p1">document.getElementById('projectModal').addEventListener('click', function(e){ if(e.target===this) closeModal(); });</p>
-<p class="p1">document.addEventListener('keydown', e =&gt; { if(e.key==='Escape'){ closeModal(); closePitch(); } });</p>
-<p class="p2"><br></p>
-<p class="p1">// Accordion</p>
-<p class="p1">function toggleExp(el) {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.exp-card').forEach(c =&gt; { if(c!==el) c.classList.remove('open'); });</p>
-<p class="p1"><span class="Apple-converted-space">  </span>el.classList.toggle('open');</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">// Nav active</p>
-<p class="p1">window.addEventListener('scroll', () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const secs = ['home','about','resume','portfolio','contact'];</p>
-<p class="p1"><span class="Apple-converted-space">  </span>let cur = 'home';</p>
-<p class="p1"><span class="Apple-converted-space">  </span>secs.forEach(id =&gt; { const el=document.getElementById(id); if(el&amp;&amp;window.scrollY&gt;=el.offsetTop-120) cur=id; });</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.nav-links a').forEach(a =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>a.classList.toggle('active', a.getAttribute('href')==='#'+cur);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p1">});</p>
-<p class="p2"><br></p>
-<p class="p1">// Fade in on scroll</p>
-<p class="p1">const observer = new IntersectionObserver((entries) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>entries.forEach(e =&gt; { if(e.isIntersecting) e.target.classList.add('visible'); });</p>
-<p class="p1">}, { threshold: 0.08 });</p>
-<p class="p1">document.querySelectorAll('.fade-in').forEach(el =&gt; observer.observe(el));</p>
-<p class="p2"><br></p>
-<p class="p1">// Skill bars animate on scroll</p>
-<p class="p1">const skillObserver = new IntersectionObserver((entries) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>entries.forEach(e =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(e.isIntersecting) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>e.target.querySelectorAll('.skill-fill').forEach(bar =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>bar.style.width = bar.dataset.pct + '%';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p1">}, { threshold: 0.2 });</p>
-<p class="p1">document.querySelectorAll('#about').forEach(el =&gt; skillObserver.observe(el));</p>
-<p class="p2"><br></p>
-<p class="p1">// Pitch Modal</p>
-<p class="p1">function openPitch() { document.getElementById('pitchModal').classList.add('open'); }</p>
-<p class="p1">function closePitch() { document.getElementById('pitchModal').classList.remove('open'); }</p>
-<p class="p1">document.getElementById('pitchModal').addEventListener('click', function(e){ if(e.target===this) closePitch(); });</p>
-<p class="p2"><br></p>
-<p class="p1">async function generatePitch() {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const company = document.getElementById('p-company').value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const role = document.getElementById('p-role').value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>if (!company || !role) return;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const btn = document.getElementById('p-btn');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const loading = document.getElementById('p-loading');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const result = document.getElementById('p-result');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>btn.disabled = true; btn.textContent = 'Generating...';</p>
-<p class="p1"><span class="Apple-converted-space">  </span>loading.classList.add('show'); result.classList.remove('show');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>try {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const res = await fetch('https://api.anthropic.com/v1/messages', {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>method:'POST', headers:{'Content-Type':'application/json'},</p>
-<p class="p1"><span class="Apple-converted-space">      </span>body: JSON.stringify({</p>
-<p class="p1"><span class="Apple-converted-space">        </span>model:'claude-sonnet-4-20250514', max_tokens:1000,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>messages:[{role:'user',content:`Write a confident, personalized 3–4 sentence recruiter pitch about Subranil (Neil) Saha for a hiring manager at ${company} looking for a ${role}.\n\nAbout: Senior Android Engineer, 6+ years, Bengaluru. Kotlin, Jetpack Compose, KMM, MVVM, Bluetooth/IoT, Dagger. Built GroomTribe &amp; OneBlade for Philips (IoT, KMM, AR) at UST Global; rebuilt PublicVibe (10M+) in KMM+Compose at Recro; led DIKSHA (1Cr+, Govt of India) at Tarento. 95%+ code coverage. Multi-module architecture expert.\n\nPunchy, specific, end with call to action. Pitch only.`}]</p>
-<p class="p1"><span class="Apple-converted-space">      </span>})</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const data = await res.json();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const text = data.content?.map(b=&gt;b.text||'').join('') || 'Could not generate pitch.';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('p-text').textContent = text;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>result.classList.add('show');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>} catch(e) { document.getElementById('p-text').textContent='Something went wrong. Try again.'; result.classList.add('show'); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>loading.classList.remove('show');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>btn.disabled = false; btn.textContent = 'Generate pitch ✦';</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">document.getElementById('p-company').addEventListener('keydown', e =&gt; { if(e.key==='Enter') generatePitch(); });</p>
-<p class="p1">document.getElementById('p-role').addEventListener('keydown', e =&gt; { if(e.key==='Enter') generatePitch(); });</p>
-<p class="p2"><br></p>
-<p class="p1">function copyPitch() {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const text = document.getElementById('p-text').textContent;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>navigator.clipboard.writeText(text).then(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const btn = document.getElementById('p-copy');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>btn.textContent='Copied!'; btn.classList.add('copied');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>setTimeout(()=&gt;{ btn.textContent='Copy'; btn.classList.remove('copied'); }, 2000);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p1">}</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- PROJECT MODAL --&gt;</p>
-<p class="p1">&lt;div class="modal-backdrop" id="projectModal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="modal-box"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="modal-header" id="m-header"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="modal-close" onclick="closeModal()"&gt;✕&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="modal-title-row"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal-icon" id="m-icon"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;&lt;div class="modal-name" id="m-name"&gt;&lt;/div&gt;&lt;div class="modal-sub" id="m-sub"&gt;&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="modal-body"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="modal-company-badge" id="m-company"&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="modal-desc" id="m-desc"&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="modal-tech tag-list" id="m-tech"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="modal-stats"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal-stats-dot" id="m-stats-dot"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="modal-stats-text" id="m-stats-text"&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="modal-actions"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="modal-play-btn" id="m-play" target="_blank"&gt;View on Play Store →&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="modal-close-btn" onclick="closeModal()"&gt;Close&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- PITCH MODAL --&gt;</p>
-<p class="p1">&lt;div class="pitch-backdrop" id="pitchModal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="pitch-box"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pitch-header"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;&lt;p class="pitch-tag"&gt;AI-powered&lt;/p&gt;&lt;h3 class="pitch-title"&gt;Get a tailored pitch&lt;/h3&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="pitch-close" onclick="closePitch()"&gt;✕&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pitch-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;&lt;label class="pitch-label"&gt;Your company&lt;/label&gt;&lt;input class="pitch-input" id="p-company" placeholder="e.g. Dexcom" /&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;&lt;label class="pitch-label"&gt;Role&lt;/label&gt;&lt;input class="pitch-input" id="p-role" placeholder="e.g. Sr. Android Engineer" /&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="pitch-btn" id="p-btn" onclick="generatePitch()"&gt;Generate pitch ✦&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pitch-loading" id="p-loading"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pitch-dot"&gt;&lt;/div&gt;&lt;div class="pitch-dot"&gt;&lt;/div&gt;&lt;div class="pitch-dot"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="pitch-loading-text"&gt;Crafting your pitch...&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pitch-result" id="p-result"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pitch-result-header"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="pitch-result-label"&gt;Your pitch&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="pitch-copy-btn" id="p-copy" onclick="copyPitch()"&gt;Copy&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="pitch-text" id="p-text"&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">SUBRANIL</span>
+  <div class="nav-links">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#resume">Resume</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="btn-pitch-nav" onclick="openPitch()">Get Pitch ✦</button>
+</nav>
+
+<div class="container">
+
+<!-- HERO -->
+<section id="home">
+  <div class="badge-open"><span class="badge-dot"></span> Open to opportunities · Bengaluru, India</div>
+  <p class="hero-sub">Hi, I'm Subranil Saha!</p>
+  <h1 class="hero-title">
+    <span class="brace">{ </span>Senior Android<br>Engineer<span class="brace"> }</span>
+  </h1>
+  <p class="hero-desc">6+ years building complex, high-quality Android apps — specializing in KMM, Jetpack Compose, MVVM, and Bluetooth/IoT. Shipped to 10M+ users across education, media, and consumer IoT.</p>
+  <div class="hero-btns">
+    <a href="#about" class="btn btn-outline-accent">About me ↓</a>
+    <a href="#contact" class="btn btn-outline">Let's talk →</a>
+    <button class="btn btn-pink" onclick="openPitch()">Get pitch ✦</button>
+  </div>
+  <div class="social-row">
+    <a href="https://www.linkedin.com/in/subranil-saha-914897ba/" class="social-icon" target="_blank">in</a>
+    <a href="https://github.com/subranil" class="social-icon" target="_blank">gh</a>
+    <a href="https://medium.com/@subranil" class="social-icon" target="_blank">M</a>
+    <a href="https://www.instagram.com/by_whitexblue/" class="social-icon" target="_blank">ig</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="fade-in">
+  <div class="section-label">
+    <p class="section-tag">Global Expertise</p>
+    <h2 class="section-title">Let me introduce <span class="ac">{ the Engineer }</span></h2>
+  </div>
+  <div class="about-grid">
+    <div>
+      <p class="about-desc">Experienced Android Developer with <span class="hi">6+ years</span> specializing in enhancements, migrations, and optimizations. Proficient in <span class="pk">KMM, Jetpack Compose, MVVM</span>, and Bluetooth connectivity.</p>
+      <p class="about-desc">Proven track record at <span class="hi">UST Global</span>, <span class="hi">Recro</span>, and <span class="hi">Tarento</span> — delivering scalable, innovative solutions for challenging projects across IoT, media, and ed-tech.</p>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-val">6+</div><div class="stat-label">Years exp.</div></div>
+        <div class="stat-card"><div class="stat-val">4</div><div class="stat-label">Shipped apps</div></div>
+        <div class="stat-card"><div class="stat-val">10M+</div><div class="stat-label">Users reached</div></div>
+        <div class="stat-card"><div class="stat-val">95%+</div><div class="stat-label">Code coverage</div></div>
+      </div>
+      <div class="profile-rows">
+        <div class="profile-row"><span class="key">Email:</span><span class="val">subranil.saha@gmail.com</span></div>
+        <div class="profile-row"><span class="key">Location:</span><span class="val">Bengaluru, India</span></div>
+        <div class="profile-row"><span class="key">Position:</span><span class="val">Lead I SE at UST Global</span></div>
+        <div class="profile-row"><span class="key">Education:</span><span class="val">B.E. CS, Anna University</span></div>
+      </div>
+    </div>
+    <div>
+      <p class="skill-section-title">Skills</p>
+      <div class="skill-item"><div class="skill-header"><span class="skill-name">Kotlin</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-pct="95"></div></div></div>
+      <div class="skill-item"><div class="skill-header"><span class="skill-name">Jetpack Compose</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill" data-pct="92"></div></div></div>
+      <div class="skill-item"><div class="skill-header"><span class="skill-name">KMM (Kotlin Multiplatform)</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" data-pct="85"></div></div></div>
+      <div class="skill-item"><div class="skill-header"><span class="skill-name">MVVM / Clean Architecture</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill" data-pct="92"></div></div></div>
+      <div class="skill-item"><div class="skill-header"><span class="skill-name">Coroutines & Flow API</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-pct="90"></div></div></div>
+      <div class="skill-item"><div class="skill-header"><span class="skill-name">Bluetooth / IoT</span><span class="skill-pct">82%</span></div><div class="skill-track"><div class="skill-fill" data-pct="82"></div></div></div>
+      <div class="skill-item"><div class="skill-header"><span class="skill-name">Dagger / DI</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" data-pct="85"></div></div></div>
+      <div class="skill-item"><div class="skill-header"><span class="skill-name">Java</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-pct="80"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume" class="fade-in">
+  <div class="section-label">
+    <p class="section-tag">Experience</p>
+    <h2 class="section-title">Lead Android Developer <span class="ac">{ Credentials }</span></h2>
+  </div>
+  <div class="exp-list">
+    <!-- UST Global -->
+    <div class="exp-card open" onclick="toggleExp(this)">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Lead I SE — Android</div>
+          <div class="exp-meta">
+            <span class="exp-company">UST Global</span>
+            <span class="exp-client">Client: Philips</span>
+          </div>
+        </div>
+        <div class="exp-right">
+          <span class="exp-period">Jul 2023 – Present</span>
+          <span class="exp-arrow">⌄</span>
+        </div>
+      </div>
+      <div class="exp-body">
+        <ul class="exp-bullets">
+          <li>Single codebase powering two flagship Philips grooming apps: GroomTribe & OneBlade.</li>
+          <li>Built KMM connectivity layer handling Bluetooth interface for IoT-connected shavers.</li>
+          <li>Network calls on KMM layer using Ktor; MVVM with ViewModel + repository pattern.</li>
+          <li>4-repo architecture: UI library, base repo with 2 submodules (Service + Localisation).</li>
+          <li>Maintained 95%+ code coverage on Sonar across all feature scenarios.</li>
+        </ul>
+        <div class="exp-apps">
+          <a href="https://play.google.com/store/search?q=groomtribe&c=apps" class="exp-app-link" target="_blank"><span class="exp-app-dot"></span>GroomTribe</a>
+          <a href="https://play.google.com/store/search?q=One%20Blade&c=apps" class="exp-app-link" target="_blank"><span class="exp-app-dot"></span>OneBlade</a>
+        </div>
+      </div>
+    </div>
+    <!-- Recro -->
+    <div class="exp-card" onclick="toggleExp(this)">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">SSE — Android</div>
+          <div class="exp-meta">
+            <span class="exp-company">Recro</span>
+            <span class="exp-client">Client: Versé Innovation (DailyHunt)</span>
+          </div>
+        </div>
+        <div class="exp-right">
+          <span class="exp-period">Feb 2022 – Jul 2023</span>
+          <span class="exp-arrow">⌄</span>
+        </div>
+      </div>
+      <div class="exp-body">
+        <ul class="exp-bullets">
+          <li>Maintenance and enhancement of PublicVibe app — 10M+ downloads.</li>
+          <li>Rebuilt the application in KMM + Jetpack Compose with a multi-module structure.</li>
+          <li>Created a multi-module navigation library with deep link support for the KMM project.</li>
+          <li>Integrated in-house, Google, and Facebook ads — 26 ad types with direct revenue impact.</li>
+        </ul>
+        <div class="exp-apps">
+          <a href="https://play.google.com/store/apps/details?id=com.cardfeed.video_public" class="exp-app-link" target="_blank"><span class="exp-app-dot"></span>Public App</a>
+        </div>
+      </div>
+    </div>
+    <!-- Tarento -->
+    <div class="exp-card" onclick="toggleExp(this)">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">SSE — Android</div>
+          <div class="exp-meta">
+            <span class="exp-company">Tarento Technologies</span>
+            <span class="exp-client">Client: Ekstep Org</span>
+          </div>
+        </div>
+        <div class="exp-right">
+          <span class="exp-period">Mar 2018 – Feb 2022</span>
+          <span class="exp-arrow">⌄</span>
+        </div>
+      </div>
+      <div class="exp-body">
+        <ul class="exp-bullets">
+          <li>Developed and enhanced Sunbird & DIKSHA — India's national digital learning platforms.</li>
+          <li>Led migration of service layer from JavaScript SDK to Android SDK.</li>
+          <li>Refactored legacy MVC to MVVM Kotlin, improving maintainability and scalability.</li>
+          <li>Spearheaded Hybrid (Ionic + Angular) to Native Android transition.</li>
+          <li>Resolved critical production bugs across complex multi-dashboard user journeys.</li>
+        </ul>
+        <div class="exp-apps">
+          <a href="https://play.google.com/store/apps/details?id=in.gov.diksha.app" class="exp-app-link" target="_blank"><span class="exp-app-dot"></span>DIKSHA</a>
+          <a href="https://play.google.com/store/apps/details?id=in.gov.diksha.app" class="exp-app-link" target="_blank"><span class="exp-app-dot"></span>Sunbird</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="info-card">
+    <p class="info-card-title">Tech stack</p>
+    <div class="tag-list">
+      <span class="tag">Java</span><span class="tag">Kotlin</span><span class="tag">TypeScript</span>
+      <span class="tag">Android SDK</span><span class="tag">Jetpack Compose</span><span class="tag">KMM</span>
+      <span class="tag">MVP/MVVM</span><span class="tag">LiveData</span><span class="tag">Flow API</span>
+      <span class="tag">Coroutines</span><span class="tag">ExoPlayer</span><span class="tag">Jetpack Navigation</span>
+      <span class="tag">Dagger</span><span class="tag">Ktor</span><span class="tag">Retrofit</span>
+      <span class="tag">JUnit</span><span class="tag">Room DB</span><span class="tag">SQLite</span>
+      <span class="tag">Firebase Firestore</span><span class="tag">Git</span>
+    </div>
+  </div>
+  <div class="info-card">
+    <div class="edu-row">
+      <div><div class="edu-name">B.E. in Computer Science</div><div class="edu-sub">Excel Engineering College, Anna University</div></div>
+      <span class="badge-year">2012 – 2016</span>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="fade-in">
+  <div class="section-label">
+    <p class="section-tag">Shipped Work</p>
+    <h2 class="section-title">Check Out Some of <span class="ac">{ My Works }</span></h2>
+  </div>
+  <p class="portfolio-desc">Explore my portfolio of high-impact Android applications — click any card for details.</p>
+  <div class="portfolio-grid">
+
+    <!-- GroomTribe -->
+    <div class="portfolio-card" onclick="openModal('groomtribe')" style="--card-color:#7f77dd">
+      <div class="portfolio-thumb" style="background:linear-gradient(135deg,#7f77dd18,#161b22)">
+        <div class="portfolio-icon" style="background:#7f77dd22;border:2px solid #7f77dd44;color:#7f77dd">GT</div>
+        <div class="portfolio-overlay">
+          <span class="overlay-btn" style="background:#7f77dd">Details →</span>
+        </div>
+      </div>
+      <div class="portfolio-footer">
+        <div class="portfolio-name">GroomTribe</div>
+        <div class="portfolio-tag">Android Native · IoT · KMM</div>
+      </div>
+    </div>
+
+    <!-- OneBlade -->
+    <div class="portfolio-card" onclick="openModal('oneblade')" style="--card-color:#7f77dd">
+      <div class="portfolio-thumb" style="background:linear-gradient(135deg,#7f77dd18,#161b22)">
+        <div class="portfolio-icon" style="background:#7f77dd22;border:2px solid #7f77dd44;color:#7f77dd">OB</div>
+        <div class="portfolio-overlay">
+          <span class="overlay-btn" style="background:#7f77dd">Details →</span>
+        </div>
+      </div>
+      <div class="portfolio-footer">
+        <div class="portfolio-name">OneBlade</div>
+        <div class="portfolio-tag">Android Native · IoT · AR</div>
+      </div>
+    </div>
+
+    <!-- Public App -->
+    <div class="portfolio-card" onclick="openModal('public')" style="--card-color:#e83e8c">
+      <div class="portfolio-thumb" style="background:linear-gradient(135deg,#e83e8c18,#161b22)">
+        <div class="portfolio-icon" style="background:#e83e8c22;border:2px solid #e83e8c44;color:#e83e8c">PA</div>
+        <div class="portfolio-overlay">
+          <span class="overlay-btn" style="background:#e83e8c">Details →</span>
+        </div>
+      </div>
+      <div class="portfolio-footer">
+        <div class="portfolio-name">Public App</div>
+        <div class="portfolio-tag">Android Native · KMM · Compose</div>
+      </div>
+    </div>
+
+    <!-- DIKSHA -->
+    <div class="portfolio-card" onclick="openModal('diksha')" style="--card-color:#1d9e75">
+      <div class="portfolio-thumb" style="background:linear-gradient(135deg,#1d9e7518,#161b22)">
+        <div class="portfolio-icon" style="background:#1d9e7522;border:2px solid #1d9e7544;color:#1d9e75">DK</div>
+        <div class="portfolio-overlay">
+          <span class="overlay-btn" style="background:#1d9e75">Details →</span>
+        </div>
+      </div>
+      <div class="portfolio-footer">
+        <div class="portfolio-name">DIKSHA</div>
+        <div class="portfolio-tag">Android Native · MVVM · Govt of India</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade-in">
+  <div class="section-label">
+    <p class="section-tag">Get In Touch</p>
+    <h2 class="section-title">Let's <span class="ac">{ Connect }</span></h2>
+  </div>
+  <div class="contact-card">
+    <p class="contact-sub">Open to senior Android roles · Bengaluru, India<br><a href="mailto:subranil.saha@gmail.com">subranil.saha@gmail.com</a></p>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/subranil-saha-914897ba/" class="contact-link" target="_blank">LinkedIn</a>
+      <a href="https://github.com/subranil" class="contact-link" target="_blank">GitHub</a>
+      <a href="https://medium.com/@subranil" class="contact-link" target="_blank">Medium</a>
+      <a href="https://www.instagram.com/by_whitexblue/" class="contact-link" target="_blank">Instagram</a>
+      <button class="btn btn-pink" onclick="openPitch()">Get my pitch ✦</button>
+    </div>
+    <p class="footer-copy">© 2025 Subranil Saha · Bengaluru, India</p>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<!-- PROJECT MODALS DATA -->
+<script>
+const PROJECTS = {
+  groomtribe: {
+    icon:'GT', name:'GroomTribe', sub:'Philips Shaving & Styling',
+    color:'#7f77dd', company:'UST Global · Philips',
+    desc:'Philips\' flagship male grooming companion app. Built with a single KMM codebase shared with OneBlade. Features Bluetooth shaver pairing, real-time IoT shave guidance, AR beard styling, personalized skin analytics, and 95%+ Sonar code coverage.',
+    tech:['KMM','Kotlin','BLE','MVVM','Ktor','AR'],
+    stats:'IoT · AR · BLE · Sonar 95%+',
+    link:'https://play.google.com/store/search?q=groomtribe&c=apps'
+  },
+  oneblade: {
+    icon:'OB', name:'OneBlade', sub:'Philips Daily Care',
+    color:'#7f77dd', company:'UST Global · Philips',
+    desc:'Companion app for the Philips OneBlade range. Shares the KMM codebase with GroomTribe. Features smart blade replacement tracking, augmented reality beard styling, real-time speed guidance for Bluetooth-connected devices, and personalized grooming advice.',
+    tech:['KMM','Kotlin','AR','BLE','MVVM'],
+    stats:'KMM · AR · Smart Tracking',
+    link:'https://play.google.com/store/search?q=One%20Blade&c=apps'
+  },
+  public: {
+    icon:'PA', name:'Public App', sub:'Indian Local Video & News',
+    color:'#e83e8c', company:'Recro · Versé Innovation',
+    desc:'India\'s hyperlocal video news platform (PublicVibe) for Versé Innovation / DailyHunt. Rebuilt in KMM + Jetpack Compose with a multi-module architecture. Integrated 26 ad types including in-house, Google, and Facebook for direct revenue impact.',
+    tech:['KMM','Jetpack Compose','Multi-module','Ads','Deep Links'],
+    stats:'10M+ Downloads · 4.3★',
+    link:'https://play.google.com/store/apps/details?id=com.cardfeed.video_public'
+  },
+  diksha: {
+    icon:'DK', name:'DIKSHA', sub:'National Education Platform',
+    color:'#1d9e75', company:'Tarento · Ekstep · Govt of India',
+    desc:'India\'s flagship school education platform by NCERT. Led the transition from Hybrid (Ionic + Angular) to Native Android, migrated the service layer from JS SDK to Android SDK, and refactored legacy MVC to MVVM Kotlin for millions of students and teachers.',
+    tech:['Kotlin','MVVM','Android SDK','Native Migration'],
+    stats:'1Cr+ Downloads · 4.1★ · Govt of India',
+    link:'https://play.google.com/store/apps/details?id=in.gov.diksha.app'
+  }
+};
+
+function openModal(id) {
+  const p = PROJECTS[id];
+  const backdrop = document.getElementById('projectModal');
+  document.getElementById('m-icon').textContent = p.icon;
+  document.getElementById('m-icon').style.background = p.color+'22';
+  document.getElementById('m-icon').style.border = '2px solid '+p.color+'55';
+  document.getElementById('m-icon').style.color = p.color;
+  document.getElementById('m-header').style.background = 'linear-gradient(135deg,'+p.color+'22 0%,#161b22 100%)';
+  document.getElementById('m-name').textContent = p.name;
+  document.getElementById('m-sub').textContent = p.sub;
+  document.getElementById('m-company').textContent = p.company;
+  document.getElementById('m-company').style.background = p.color+'18';
+  document.getElementById('m-company').style.border = '1px solid '+p.color+'44';
+  document.getElementById('m-company').style.color = p.color;
+  document.getElementById('m-desc').textContent = p.desc;
+  document.getElementById('m-stats-dot').style.background = p.color;
+  document.getElementById('m-stats-text').textContent = p.stats;
+  document.getElementById('m-stats-text').style.color = p.color;
+  document.getElementById('m-play').href = p.link;
+  document.getElementById('m-play').style.background = p.color;
+  const techEl = document.getElementById('m-tech');
+  techEl.innerHTML = p.tech.map(t=>`<span class="tag">${t}</span>`).join('');
+  backdrop.classList.add('open');
+}
+function closeModal() { document.getElementById('projectModal').classList.remove('open'); }
+document.getElementById('projectModal').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape'){ closeModal(); closePitch(); } });
+
+// Accordion
+function toggleExp(el) {
+  document.querySelectorAll('.exp-card').forEach(c => { if(c!==el) c.classList.remove('open'); });
+  el.classList.toggle('open');
+}
+
+// Nav active
+window.addEventListener('scroll', () => {
+  const secs = ['home','about','resume','portfolio','contact'];
+  let cur = 'home';
+  secs.forEach(id => { const el=document.getElementById(id); if(el&&window.scrollY>=el.offsetTop-120) cur=id; });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href')==='#'+cur);
+  });
+});
+
+// Fade in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Skill bars animate on scroll
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.querySelectorAll('.skill-fill').forEach(bar => {
+        bar.style.width = bar.dataset.pct + '%';
+      });
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('#about').forEach(el => skillObserver.observe(el));
+
+// Pitch Modal
+function openPitch() { document.getElementById('pitchModal').classList.add('open'); }
+function closePitch() { document.getElementById('pitchModal').classList.remove('open'); }
+document.getElementById('pitchModal').addEventListener('click', function(e){ if(e.target===this) closePitch(); });
+
+async function generatePitch() {
+  const company = document.getElementById('p-company').value.trim();
+  const role = document.getElementById('p-role').value.trim();
+  if (!company || !role) return;
+  const btn = document.getElementById('p-btn');
+  const loading = document.getElementById('p-loading');
+  const result = document.getElementById('p-result');
+  btn.disabled = true; btn.textContent = 'Generating...';
+  loading.classList.add('show'); result.classList.remove('show');
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        model:'claude-sonnet-4-20250514', max_tokens:1000,
+        messages:[{role:'user',content:`Write a confident, personalized 3–4 sentence recruiter pitch about Subranil (Neil) Saha for a hiring manager at ${company} looking for a ${role}.\n\nAbout: Senior Android Engineer, 6+ years, Bengaluru. Kotlin, Jetpack Compose, KMM, MVVM, Bluetooth/IoT, Dagger. Built GroomTribe & OneBlade for Philips (IoT, KMM, AR) at UST Global; rebuilt PublicVibe (10M+) in KMM+Compose at Recro; led DIKSHA (1Cr+, Govt of India) at Tarento. 95%+ code coverage. Multi-module architecture expert.\n\nPunchy, specific, end with call to action. Pitch only.`}]
+      })
+    });
+    const data = await res.json();
+    const text = data.content?.map(b=>b.text||'').join('') || 'Could not generate pitch.';
+    document.getElementById('p-text').textContent = text;
+    result.classList.add('show');
+  } catch(e) { document.getElementById('p-text').textContent='Something went wrong. Try again.'; result.classList.add('show'); }
+  loading.classList.remove('show');
+  btn.disabled = false; btn.textContent = 'Generate pitch ✦';
+}
+
+document.getElementById('p-company').addEventListener('keydown', e => { if(e.key==='Enter') generatePitch(); });
+document.getElementById('p-role').addEventListener('keydown', e => { if(e.key==='Enter') generatePitch(); });
+
+function copyPitch() {
+  const text = document.getElementById('p-text').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('p-copy');
+    btn.textContent='Copied!'; btn.classList.add('copied');
+    setTimeout(()=>{ btn.textContent='Copy'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
+
+<!-- PROJECT MODAL -->
+<div class="modal-backdrop" id="projectModal">
+  <div class="modal-box">
+    <div class="modal-header" id="m-header">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-title-row">
+        <div class="modal-icon" id="m-icon"></div>
+        <div><div class="modal-name" id="m-name"></div><div class="modal-sub" id="m-sub"></div></div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <span class="modal-company-badge" id="m-company"></span>
+      <p class="modal-desc" id="m-desc"></p>
+      <div class="modal-tech tag-list" id="m-tech"></div>
+      <div class="modal-stats">
+        <div class="modal-stats-dot" id="m-stats-dot"></div>
+        <span class="modal-stats-text" id="m-stats-text"></span>
+      </div>
+      <div class="modal-actions">
+        <a class="modal-play-btn" id="m-play" target="_blank">View on Play Store →</a>
+        <button class="modal-close-btn" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PITCH MODAL -->
+<div class="pitch-backdrop" id="pitchModal">
+  <div class="pitch-box">
+    <div class="pitch-header">
+      <div><p class="pitch-tag">AI-powered</p><h3 class="pitch-title">Get a tailored pitch</h3></div>
+      <button class="pitch-close" onclick="closePitch()">✕</button>
+    </div>
+    <div class="pitch-grid">
+      <div><label class="pitch-label">Your company</label><input class="pitch-input" id="p-company" placeholder="e.g. Dexcom" /></div>
+      <div><label class="pitch-label">Role</label><input class="pitch-input" id="p-role" placeholder="e.g. Sr. Android Engineer" /></div>
+    </div>
+    <button class="pitch-btn" id="p-btn" onclick="generatePitch()">Generate pitch ✦</button>
+    <div class="pitch-loading" id="p-loading">
+      <div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div>
+      <span class="pitch-loading-text">Crafting your pitch...</span>
+    </div>
+    <div class="pitch-result" id="p-result">
+      <div class="pitch-result-header">
+        <span class="pitch-result-label">Your pitch</span>
+        <button class="pitch-copy-btn" id="p-copy" onclick="copyPitch()">Copy</button>
+      </div>
+      <p class="pitch-text" id="p-text"></p>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
