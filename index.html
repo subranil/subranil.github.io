@@ -363,7 +363,7 @@ section{margin-bottom:5rem}
         <div class="stat-card" onclick="pingCard(this)"><div class="stat-val">95%+</div><div class="stat-label">Code coverage</div></div>
       </div>
       <div class="profile-rows">
-        <div class="profile-row"><span class="key">Email:</span><span class="val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a1d2d4c3d3c0cfc8cd8fd2c0c9c0e1c6ccc0c8cd8fc2cecc">[email&#160;protected]</a></span></div>
+        <div class="profile-row"><span class="key">Email:</span><span class="val">subranil.saha@gmail.com</span></div>
         <div class="profile-row"><span class="key">Location:</span><span class="val">Bengaluru, India</span></div>
         <div class="profile-row"><span class="key">Position:</span><span class="val">Lead I SE at UST Global</span></div>
         <div class="profile-row"><span class="key">Education:</span><span class="val">B.E. CS, Anna University</span></div>
@@ -556,7 +556,7 @@ section{margin-bottom:5rem}
     <h2 class="section-title">Let's <span class="ac">{ Connect }</span></h2>
   </div>
   <div class="contact-card">
-    <p class="contact-sub">Open to senior Android roles · Bengaluru, India<br><a href="/cdn-cgi/l/email-protection#760503140417181f1a5805171e1736111b171f1a5815191b"><span class="__cf_email__" data-cfemail="097a7c6b7b68676065277a686168496e64686065276a6664">[email&#160;protected]</span></a></p>
+    <p class="contact-sub">Open to senior Android roles · Bengaluru, India<br><a href="mailto:subranil.saha@gmail.com">subranil.saha@gmail.com</a></p>
     <div class="contact-links">
       <a href="https://www.linkedin.com/in/subranil-saha-914897ba/" class="contact-link" target="_blank">LinkedIn</a>
       <a href="https://github.com/subranil" class="contact-link" target="_blank">GitHub</a>
@@ -622,7 +622,7 @@ section{margin-bottom:5rem}
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ── PROJECT DATA ── */
@@ -847,4 +847,17 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     const ids = ['home','about','resume','arch','portfolio','contact'];
     let cur = 'home';
-    ids
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if(el && window.scrollY >= el.offsetTop - 140) cur = id;
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      const href = a.getAttribute('href');
+      a.classList.toggle('active', href === '#'+cur);
+    });
+  }, {passive:true});
+
+}); // end DOMContentLoaded
+</script>
+</body>
+</html>
